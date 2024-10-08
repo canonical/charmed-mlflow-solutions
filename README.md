@@ -1,2 +1,2 @@
 # charmed-mlflow-solutions
-Terraform Solutions for Charmed Kubeflow
+Terraform Solutions for Charmed MLFlow
