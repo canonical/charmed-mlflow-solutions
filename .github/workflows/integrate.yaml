@@ -1,0 +1,12 @@
+name: CI
+
+on:
+  workflow_call:
+
+jobs:
+
+  terraform-checks:
+    name: Terraform
+    uses: canonical/charmed-kubeflow-workflows/.github/workflows/terraform-checks-solution.yaml@kf-6347-ci-terraform-lint-format
+    with:
+      module-path: mlflow
