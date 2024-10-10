@@ -28,10 +28,16 @@ variable "grafana_agent_k8s_size" {
   default     = "10G"
 }
 
-variable "minio_size" {
+variable "mlflow_minio_size" {
   description = "MinIO database storage size"
   type        = string
   default     = "10G"
+}
+
+variable "mlflow_minio_revision" {
+  description = "Charm revision for mlflow-minio"
+  type        = number
+  default     = null
 }
 
 variable "mlflow_mysql_revision" {
@@ -44,6 +50,12 @@ variable "mlflow_mysql_size" {
   description = "Size allocated for mysql data"
   type        = string
   default     = "10G"
+}
+
+variable "mlflow_server_revision" {
+  description = "Charm revision for mlflow-server"
+  type        = number
+  default     = null
 }
 
 variable "model" {

@@ -22,7 +22,7 @@ resource "juju_integration" "mlflow_mysql_grafana_agent_k8s_grafana_dashboard" {
 
   application {
     name     = module.mlflow_mysql.application_name
-    endpoint = "grafana-dashboard"
+    endpoint = module.mlflow_mysql.provides.grafana_dashboard
   }
 
   application {
@@ -37,7 +37,7 @@ resource "juju_integration" "mlflow_mysql_grafana_agent_k8s_metrics_endpoint" {
 
   application {
     name     = module.mlflow_mysql.application_name
-    endpoint = "metrics-endpoint"
+    endpoint = module.mlflow_mysql.provides.metrics_endpoint
   }
 
   application {
@@ -52,7 +52,7 @@ resource "juju_integration" "mlflow_mysql_grafana_agent_k8s_grafana_logging" {
 
   application {
     name     = module.mlflow_mysql.application_name
-    endpoint = "logging"
+    endpoint = module.mlflow_mysql.requires.logging
   }
 
   application {
