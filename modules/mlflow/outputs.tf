@@ -11,7 +11,7 @@ output "grafana_agent_k8s" {
   } : null
 }
 
-output "minio" {
+output "mlflow_minio" {
   value = {
     app_name = module.minio.app_name,
     provides = module.minio.provides,
