@@ -16,17 +16,14 @@ module "mlflow_server" {
 
 module "mlflow_mysql" {
   # tflint-ignore: terraform_module_pinned_source
-  source              = "git::https://github.com/canonical/terraform-modules//modules/k8s/mysql?ref=main"
-  juju_model_name     = var.create_model ? juju_model.kubeflow[0].name : var.model
-  mysql_app_name      = "mlflow-mysql"
-  mysql_charm_channel = "8.0/stable"
-  mysql_charm_units   = 1
-  # Constrain is a required workaround due to https://github.com/juju/terraform-provider-juju/issues/344
-  mysql_charm_constraints = "arch=amd64"
+  source          = "git::https://github.com/canonical/mysql-k8s-operator//terraform?ref=main"
+  juju_model_name = var.create_model ? juju_model.kubeflow[0].name : local.model
+  app_name        = "mlflow-mysql"
+  channel         = "8.0/stable"
   # The following config is equivalent to "constraints: mem=2G"
-  mysql_charm_config = {
+  config = {
     profile-limit-memory = "2048"
   }
-  mysql_storage_size   = var.mlflow_mysql_size
-  mysql_charm_revision = var.mlflow_mysql_revision
+  storage_size = var.mlflow_mysql_size
+  revision     = var.mlflow_mysql_revision
 }
