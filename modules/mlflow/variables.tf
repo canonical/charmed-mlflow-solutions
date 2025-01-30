@@ -10,6 +10,12 @@ variable "create_model" {
   default     = true
 }
 
+variable "enable_mlflow_nodeport" {
+  description = "Boolean value that enables the NodePort service for MLFlow"
+  type        = bool
+  default     = true
+}
+
 variable "existing_grafana_agent_name" {
   description = "Name of an existing grafana-agent-k8s deployment"
   type        = string
@@ -63,3 +69,4 @@ variable "model" {
   type        = string
   default     = "kubeflow"
 }
+
