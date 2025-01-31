@@ -11,6 +11,9 @@ module "minio" {
 module "mlflow_server" {
   source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/2.15"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
+  config = {
+    enable_mlflow_nodeport = var.enable_mlflow_nodeport,
+  }
   revision   = var.mlflow_server_revision
 }
 
@@ -23,7 +26,6 @@ module "mlflow_mysql" {
   # The following config is equivalent to "constraints: mem=2G"
   config = {
     profile-limit-memory   = "2048",
-    enable_mlflow_nodeport = var.enable_mlflow_nodeport,
   }
   storage_size = var.mlflow_mysql_size
   revision     = var.mlflow_mysql_revision
