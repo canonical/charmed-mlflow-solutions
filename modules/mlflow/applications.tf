@@ -26,7 +26,7 @@ module "mlflow_mysql" {
   channel         = "8.0/stable"
   # The following config is equivalent to "constraints: mem=2G"
   config = {
-    profile-limit-memory = "2048",
+    profile-limit-memory = "2048"
   }
   storage_size = var.mlflow_mysql_size
   revision     = var.mlflow_mysql_revision
