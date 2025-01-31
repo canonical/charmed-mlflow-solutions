@@ -58,6 +58,12 @@ variable "mlflow_mysql_size" {
   default     = "10G"
 }
 
+variable "mlflow_nodeport" {
+  description = "The nodeport for MLFlow"
+  type        = number
+  default     = 31380
+}
+
 variable "mlflow_server_revision" {
   description = "Charm revision for mlflow-server"
   type        = number

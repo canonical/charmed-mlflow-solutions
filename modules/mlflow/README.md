@@ -17,6 +17,7 @@ The solution module offers the following configurable inputs:
 | `grafana_agent_k8s_size`| string | Grafana agent database storage size | False |
 | `mlflow_minio_size`         | string | MinIO storage size allocation            | False    |
 | `mlflow_mysql_size`  | string | MySQL storage size allocation for MLFlow | False    |
+| `mlflow_nodeport` | number | The nodeport for MLFlow | False |
 | `model`              | string | Name of the Juju model for deployment    | False    |
 
 ### Outputs

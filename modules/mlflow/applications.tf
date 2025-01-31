@@ -13,6 +13,7 @@ module "mlflow_server" {
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   config = {
     enable_mlflow_nodeport = var.enable_mlflow_nodeport,
+    mlflow_nodeport        = var.mlflow_nodeport,
   }
   revision = var.mlflow_server_revision
 }
