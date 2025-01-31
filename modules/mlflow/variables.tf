@@ -11,7 +11,7 @@ variable "create_model" {
 }
 
 variable "enable_mlflow_nodeport" {
-  description = "Boolean value that enables the NodePort service for MLFlow"
+  description = "Boolean value that enables the NodePort service for MLflow"
   type        = bool
   default     = true
 }
@@ -59,7 +59,7 @@ variable "mlflow_mysql_size" {
 }
 
 variable "mlflow_nodeport" {
-  description = "The nodeport for MLFlow"
+  description = "The nodeport for MLflow"
   type        = number
   default     = 31380
 }
