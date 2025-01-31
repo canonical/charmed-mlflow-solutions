@@ -1,4 +1,4 @@
-# Charmed MLFlow Terraform Solution
+# Charmed MLflow Terraform Solution
 
 This is a Terraform module facilitating the deployment of Charmed MLflow, using the [Terraform juju provider](https://github.com/juju/terraform-provider-juju/). For more information, refer to the provider [documentation](https://registry.terraform.io/providers/juju/juju/latest/docs). 
 
@@ -12,10 +12,12 @@ The solution module offers the following configurable inputs:
 | `<charm_name>_revision`| number | For each charm of the solution, the revision of the charm to deploy | False |
 | `cos_configuration`| bool | Boolean value that enables COS configuration | False |
 | `create_model`       | bool   | Allows skipping Juju model creation and re-using an existing model | False    |
+| `enable_mlflow_nodeport` | bool | Boolean value that enables the NodePort service for MLflow | False |
 | `existing_grafana_agent_name`| string | Name of an existing grafana-agent-k8s deployment | False |
 | `grafana_agent_k8s_size`| string | Grafana agent database storage size | False |
 | `mlflow_minio_size`         | string | MinIO storage size allocation            | False    |
-| `mlflow_mysql_size`  | string | MySQL storage size allocation for MLFlow | False    |
+| `mlflow_mysql_size`  | string | MySQL storage size allocation for MLflow | False    |
+| `mlflow_nodeport` | number | The nodeport for MLflow | False |
 | `model`              | string | Name of the Juju model for deployment    | False    |
 
 ### Outputs

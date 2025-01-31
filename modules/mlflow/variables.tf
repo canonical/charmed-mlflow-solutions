@@ -10,6 +10,12 @@ variable "create_model" {
   default     = true
 }
 
+variable "enable_mlflow_nodeport" {
+  description = "Boolean value that enables the NodePort service for MLflow"
+  type        = bool
+  default     = true
+}
+
 variable "existing_grafana_agent_name" {
   description = "Name of an existing grafana-agent-k8s deployment"
   type        = string
@@ -52,6 +58,12 @@ variable "mlflow_mysql_size" {
   default     = "10G"
 }
 
+variable "mlflow_nodeport" {
+  description = "The nodeport for MLflow"
+  type        = number
+  default     = 31380
+}
+
 variable "mlflow_server_revision" {
   description = "Charm revision for mlflow-server"
   type        = number
@@ -63,3 +75,4 @@ variable "model" {
   type        = string
   default     = "kubeflow"
 }
+

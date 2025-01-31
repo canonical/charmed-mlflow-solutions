@@ -11,7 +11,11 @@ module "minio" {
 module "mlflow_server" {
   source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/2.15"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
-  revision   = var.mlflow_server_revision
+  config = {
+    enable_mlflow_nodeport = var.enable_mlflow_nodeport,
+    mlflow_nodeport        = var.mlflow_nodeport,
+  }
+  revision = var.mlflow_server_revision
 }
 
 module "mlflow_mysql" {
