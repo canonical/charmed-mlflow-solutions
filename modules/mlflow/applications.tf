@@ -6,6 +6,7 @@ module "minio" {
   storage_directives = {
     minio-data = var.mlflow_minio_size
   }
+  channel    = "ckf-1.9/${var.risk}"
 }
 
 module "mlflow_server" {
@@ -16,6 +17,7 @@ module "mlflow_server" {
     mlflow_nodeport        = var.mlflow_nodeport,
   }
   revision = var.mlflow_server_revision
+  channel  = "2.15/${var.risk}"
 }
 
 module "mlflow_mysql" {

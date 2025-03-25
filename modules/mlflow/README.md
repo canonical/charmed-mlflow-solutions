@@ -10,6 +10,7 @@ The solution module offers the following configurable inputs:
 | Name                | Type   | Description                             | Required |
 |---------------------|--------|-----------------------------------------|----------|
 | `<charm_name>_revision`| number | For each charm of the solution, the revision of the charm to deploy | False |
+| `risk`| string | Value for the risk to be used. Valid values are (stable, candidate, beta and edge) | False |
 | `cos_configuration`| bool | Boolean value that enables COS configuration | False |
 | `create_model`       | bool   | Allows skipping Juju model creation and re-using an existing model | False    |
 | `enable_mlflow_nodeport` | bool | Boolean value that enables the NodePort service for MLflow | False |
