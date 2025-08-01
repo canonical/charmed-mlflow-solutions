@@ -1,6 +1,6 @@
 module "minio" {
   app_name   = "mlflow-minio"
-  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=track/ckf-1.9"
+  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=track/ckf-1.10"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   revision   = var.mlflow_minio_revision
   storage_directives = {
@@ -9,7 +9,7 @@ module "minio" {
 }
 
 module "mlflow_server" {
-  source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/2.15"
+  source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/2.22"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   config = {
     enable_mlflow_nodeport = var.enable_mlflow_nodeport,
