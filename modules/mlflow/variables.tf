@@ -45,10 +45,42 @@ variable "grafana_agent_k8s_size" {
   default     = "10G"
 }
 
+variable "mlflow_minio_access_key" {
+  description = "MinIO access key for MLflow"
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
+variable "mlflow_minio_gateway_storage_service" {
+  description = "Gateway storage service configuration for MinIO when in 'gateway' mode for MLflow"
+  type        = any
+  default     = {}
+}
+
+variable "mlflow_minio_mode" {
+  description = "MinIO mode for MLflow, either 'server' or 'gateway'"
+  type        = string
+  default     = "server"
+}
+
+variable "mlflow_minio_secret_key" {
+  description = "MinIO secret key for MLflow"
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
 variable "mlflow_minio_size" {
   description = "MinIO database storage size"
   type        = string
   default     = "10G"
+}
+
+variable "mlflow_minio_storage_service_endpoint" {
+  description = "MinIO storage service endpoint for MLflow, required if minio_mode is 'gateway'"
+  type        = string
+  default     = ""
 }
 
 variable "mlflow_minio_revision" {
