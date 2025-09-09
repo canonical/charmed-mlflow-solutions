@@ -45,6 +45,12 @@ variable "grafana_agent_k8s_size" {
   default     = "10G"
 }
 
+variable "mlflow_default_artifact_root" {
+  description = "The default bucket MLflow uses for artifacts"
+  type        = string
+  default     = "mlflow"
+}
+
 variable "mlflow_minio_access_key" {
   description = "MinIO access key for MLflow"
   type        = string
