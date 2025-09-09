@@ -54,8 +54,8 @@ variable "mlflow_minio_access_key" {
 
 variable "mlflow_minio_gateway_storage_service" {
   description = "Gateway storage service configuration for MinIO when in 'gateway' mode for MLflow"
-  type        = any
-  default     = {}
+  type        = string
+  default     = ""
 }
 
 variable "mlflow_minio_mode" {
