@@ -3,6 +3,13 @@ module "minio" {
   source     = "git::https://github.com/canonical/minio-operator//terraform?ref=track/ckf-1.9"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   revision   = var.mlflow_minio_revision
+  config = {
+    access-key               = var.mlflow_minio_access_key,
+    secret-key               = var.mlflow_minio_secret_key,
+    mode                     = var.mlflow_minio_mode,
+    gateway-storage-service  = var.mlflow_minio_gateway_storage_service,
+    storage-service-endpoint = var.mlflow_minio_storage_service_endpoint,
+  }
   storage_directives = {
     minio-data = var.mlflow_minio_size
   }
@@ -15,6 +22,7 @@ module "mlflow_server" {
   config = {
     enable_mlflow_nodeport = var.enable_mlflow_nodeport,
     mlflow_nodeport        = var.mlflow_nodeport,
+    default_artifact_root  = var.mlflow_default_artifact_root,
   }
   revision = var.mlflow_server_revision
   channel  = "2.22/${var.risk}"
