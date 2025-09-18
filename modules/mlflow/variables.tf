@@ -54,7 +54,7 @@ variable "mlflow_default_artifact_root" {
 variable "mlflow_minio_access_key" {
   description = "MinIO access key for MLflow"
   type        = string
-  default     = ""
+  default     = "minio"
   sensitive   = true
 }
 
