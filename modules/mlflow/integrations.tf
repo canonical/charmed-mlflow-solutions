@@ -21,7 +21,7 @@ resource "juju_integration" "mlflow_server_mlflow_mysql_relational_db" {
   }
 
   application {
-    name     = module.mlflow_mysql.application_name
+    name     = module.mlflow_mysql.app_name
     endpoint = "database"
   }
 }
