@@ -30,7 +30,7 @@ module "mlflow_server" {
 
 module "mlflow_mysql" {
   # tflint-ignore: terraform_module_pinned_source
-  source     = "git::https://github.com/canonical/mysql-k8s-operator//terraform?ref=main"
+  source     = "git::https://github.com/canonical/mysql-k8s-operator//terraform?ref=93d6608632ae791bffce18e3b74816ebe26d1c5a"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   app_name   = "mlflow-mysql"
   channel    = "8.0/stable"
