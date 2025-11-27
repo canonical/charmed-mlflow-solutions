@@ -92,7 +92,7 @@ variable "mlflow_minio_storage_service_endpoint" {
 variable "mlflow_minio_revision" {
   description = "Charm revision for mlflow-minio"
   type        = number
-  default     = null
+  default     = 617
 }
 
 variable "mlflow_mysql_revision" {

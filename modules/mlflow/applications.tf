@@ -13,7 +13,7 @@ module "minio" {
   storage_directives = {
     minio-data = var.mlflow_minio_size
   }
-  channel = "ckf-1.10/${var.risk}"
+  channel = "1.10/edge"
 }
 
 module "mlflow_server" {
