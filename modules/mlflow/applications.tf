@@ -1,6 +1,6 @@
 module "minio" {
   app_name   = "mlflow-minio"
-  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=track/ckf-1.10"
+  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=track/1.10"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   revision   = var.mlflow_minio_revision
   config = {
