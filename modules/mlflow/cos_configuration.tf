@@ -57,7 +57,7 @@ resource "juju_integration" "mlflow_mysql_opentelemetry_collector_k8s_grafana_lo
 
   application {
     name     = var.existing_opentelemetry_collector_name == null ? juju_application.opentelemetry_collector_k8s_mlflow[count.index].name : var.existing_opentelemetry_collector_name
-    endpoint = "logging-provider"
+    endpoint = "receive-loki-logs"
   }
 }
 
@@ -102,7 +102,7 @@ resource "juju_integration" "mlflow_server_opentelemetry_collector_k8s_logging" 
 
   application {
     name     = var.existing_opentelemetry_collector_name == null ? juju_application.opentelemetry_collector_k8s_mlflow[count.index].name : var.existing_opentelemetry_collector_name
-    endpoint = "logging-provider"
+    endpoint = "receive-loki-logs"
   }
 }
 
