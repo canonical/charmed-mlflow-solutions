@@ -15,7 +15,7 @@ The solution module offers the following configurable inputs:
 | `create_model`       | bool   | Allows skipping Juju model creation and re-using an existing model | False    |
 | `enable_mlflow_nodeport` | bool | Boolean value that enables the NodePort service for MLflow | False |
 | `existing_opentelemetry_collector_name`| string | Name of an existing opentelemetry-collector-k8s deployment | False |
-| `opentelemetry_collector_k8s_size`| string | Grafana agent database storage size | False |
+| `opentelemetry_collector_k8s_size`| string | OpenTelemetry collector storage size | False |
 | `mlflow_minio_size`         | string | MinIO storage size allocation            | False    |
 | `mlflow_mysql_size`  | string | MySQL storage size allocation for MLflow | False    |
 | `mlflow_nodeport` | number | The nodeport for MLflow | False |

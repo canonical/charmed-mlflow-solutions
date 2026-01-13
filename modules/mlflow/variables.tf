@@ -40,7 +40,7 @@ variable "opentelemetry_collector_k8s_revision" {
 }
 
 variable "opentelemetry_collector_k8s_size" {
-  description = "Grafana agent database storage size"
+  description = "OpenTelemetry collector storage size"
   type        = string
   default     = "10G"
 }
