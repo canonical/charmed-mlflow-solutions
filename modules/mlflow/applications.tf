@@ -1,6 +1,6 @@
 module "minio" {
   app_name   = "mlflow-minio"
-  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=a778843730a3966690aa2042ff031f862b14d5ec"
+  source     = "git::https://github.com/canonical/minio-operator//terraform?ref=d72b4090c0928d3480da87cefd6799c7b13dc45e"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   revision   = var.mlflow_minio_revision
   config = {
@@ -13,7 +13,7 @@ module "minio" {
   storage_directives = {
     minio-data = var.mlflow_minio_size
   }
-  channel = "ckf-1.10/${var.risk}"
+  channel = "1.10/${var.risk}"
 }
 
 module "mlflow_server" {
