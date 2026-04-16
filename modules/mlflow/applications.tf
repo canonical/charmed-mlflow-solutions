@@ -38,6 +38,7 @@ module "mlflow_mysql" {
   config = {
     profile-limit-memory = "2048"
   }
+  base         = "ubuntu@24.04"
   storage_size = var.mlflow_mysql_size
   revision     = var.mlflow_mysql_revision
 }
