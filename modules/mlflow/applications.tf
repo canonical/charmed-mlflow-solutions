@@ -17,7 +17,7 @@ module "minio" {
 }
 
 module "mlflow_server" {
-  source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/2.22"
+  source     = "git::https://github.com/canonical/mlflow-operator//terraform?ref=track/3.14"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   config = {
     enable_mlflow_nodeport = var.enable_mlflow_nodeport,
@@ -25,7 +25,7 @@ module "mlflow_server" {
     default_artifact_root  = var.mlflow_default_artifact_root,
   }
   revision = var.mlflow_server_revision
-  channel  = "2.22/${var.risk}"
+  channel  = "3.14/${var.risk}"
 }
 
 module "mlflow_mysql" {
