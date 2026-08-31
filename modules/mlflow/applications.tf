@@ -33,7 +33,7 @@ module "mlflow_mysql" {
   source     = "git::https://github.com/canonical/mysql-k8s-operator//terraform?ref=eb6261e6fd1830d80aa4fa260d091c9110c24ba4"
   model_name = var.create_model ? juju_model.kubeflow[0].name : var.model
   app_name   = "mlflow-mysql"
-  channel    = "8.0/stable"
+  channel    = "8.0/candidate"
   # The following config is equivalent to "constraints: mem=2G"
   config = {
     profile-limit-memory = "2048"
